@@ -980,40 +980,6 @@ public class RenderHandler implements IRenderer
 
             this.addLineI18n("minihud.info_line.slime_chunk", result);
         }
-        else if (type == InfoToggle.LOOKING_AT_ENTITY)
-        {
-            if (mc.crosshairTarget != null && mc.crosshairTarget.getType() == HitResult.Type.ENTITY)
-            {
-                Entity lookedEntity = this.getTargetEntity(world, mc);
-                if (lookedEntity instanceof LivingEntity living)
-                {
-                    String entityLine = StringUtils.translate("minihud.info_line.looking_at_entity.livingentity", living.getName().getString(), living.getHealth(), living.getMaxHealth());
-
-                    if (living instanceof Tameable tamable)
-                    {
-                        LivingEntity owner = tamable.getOwner();
-                        if (owner != null)
-                        {
-                            entityLine = entityLine + " - " + StringUtils.translate("minihud.info_line.looking_at_entity.owner") + ": " + owner.getName().getLiteralString();
-                        }
-                    }
-                    if (living instanceof PassiveEntity passive)
-                    {
-                        if (passive.getBreedingAge() < 0)
-                        {
-                            int untilGrown = ((IMixinPassiveEntity) passive).getRealBreedingAge() * (-1);
-                            entityLine = entityLine+ " [" + DurationFormatUtils.formatDurationWords(untilGrown * 50, true, true) + " " + StringUtils.translate("minihud.info_line.remaining") + "]";
-                        }
-                    }
-
-                    this.addLine(entityLine);
-                }
-                else
-                {
-                    this.addLineI18n("minihud.info_line.looking_at_entity", lookedEntity.getName().getString());
-                }
-            }
-        }
         else if (type == InfoToggle.LOOKING_AT_EFFECTS)
         {
             if (mc.crosshairTarget != null && mc.crosshairTarget.getType() == HitResult.Type.ENTITY)

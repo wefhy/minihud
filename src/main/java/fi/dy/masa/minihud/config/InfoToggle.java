@@ -80,7 +80,6 @@ public enum InfoToggle implements IConfigInteger, IHotkeyTogglable
     FURNACE_XP              ("infoFurnaceXp",               false, ""),
 
     // Entity
-    LOOKING_AT_ENTITY       ("infoLookingAtEntity",         false, ""),
     ENTITY_REG_NAME         ("infoEntityRegistryName",      false, ""),
     LOOKING_AT_EFFECTS      ("infoLookingAtEffects",        false, ""),
     ZOMBIE_CONVERSION       ("infoZombieConversion",        false, ""),
