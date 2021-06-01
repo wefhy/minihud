@@ -42,7 +42,7 @@
     "minihud.gui.label.hover.shape.radius_value": "§7Radius: §6%s",
     "minihud.gui.label.hover.shape.type_value": "§7Type: §b%s",
 
-    "minihud.gui.title.configs": "MiniHUD Configs",
+    "minihud.gui.title.configs": "PurityHUD Configs",
     "minihud.gui.title.shape_editor": "Shape Editor",
     "minihud.gui.title.shape_manager": "Shape Manager",
 
@@ -98,6 +98,6 @@
     "minihud.message.error.shapes.select_shape_from_dropdown": "Select the Shape type to create from the dropdown widget",
 
     "minihud.message.distance_reference_point_set": "Set distance reference point to %s",
-    "minihud.message.seed_set": "MiniHUD: Set the world seed to '%s'",
-    "minihud.message.spawn_set": "MiniHUD: Set the world spawn to %s"
+    "minihud.message.seed_set": "PurityHUD: Set the world seed to '%s'",
+    "minihud.message.spawn_set": "PurityHUD: Set the world spawn to %s"
 }
