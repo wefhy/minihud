@@ -125,7 +125,7 @@
     "minihud.config.generic.comment.lightLevelThresholdDim": "The §omaximum§r light level which is considered \"dim\".\nThis is an optional user-configurable extra level between \"dark\" and \"safe\".\nSet it below the safe threshold to disable it.",
     "minihud.config.generic.comment.lightLevelThresholdSafe": "The light level threshold which is considered safe",
     "minihud.config.generic.comment.lightLevelUnderWater": "Should the light level overlay render under water",
-    "minihud.config.generic.comment.mainRenderingToggle": "The main rendering toggle for all MiniHUD rendering,\nincluding the info lines AND all the overlay renderers",
+    "minihud.config.generic.comment.mainRenderingToggle": "The main rendering toggle for all PurityHUD rendering,\nincluding the info lines AND all the overlay renderers",
     "minihud.config.generic.comment.mapPreview": "Enables rendering a preview of the map,\nwhen you hold shift while hovering over a map item",
     "minihud.config.generic.comment.mapPreviewRequireShift": "Whether holding shift is required for the Map Preview",
     "minihud.config.generic.comment.mapPreviewSize": "The size of the rendered map previews",
@@ -163,7 +163,7 @@
     "minihud.config.generic.comment.villagerOfferLowestPriceNearby": "Only show villager offers with the lowest price for the same enchantment",
     "minihud.config.generic.comment.villagerOfferPriceThreshold": "Only show villager offers with prices below this ratio\nSet to 1.0 to display all offers",
 
-    "minihud.config.generic.prettyName.mainRenderingToggle": "MiniHUD Main Rendering",
+    "minihud.config.generic.prettyName.mainRenderingToggle": "PurityHUD Main Rendering",
 
     "minihud.config.colors.name.beaconRangeLvl1": "beaconRangeLvl1",
     "minihud.config.colors.name.beaconRangeLvl2": "beaconRangeLvl2",
@@ -704,7 +704,7 @@
     "minihud.gui.name.box.box_side.west": "west",
     "minihud.gui.name.box.box_side.east": "east",
 
-    "minihud.gui.title.configs": "MiniHUD Configs - %s",
+    "minihud.gui.title.configs": "PurityHUD Configs - %s",
     "minihud.gui.title.shape_editor": "Shape Editor (%s)",
     "minihud.gui.title.shape_manager": "Shape Manager",
 
@@ -771,13 +771,13 @@
     "minihud.message.error.shapes.select_shape_from_dropdown": "Select the Shape type to create from the dropdown widget",
 
     "minihud.message.distance_reference_point_set": "Set distance reference point to %s",
-    "minihud.message.no_seed": "MiniHUD: World seed is not known",
-    "minihud.message.seed_is": "The world seed in MiniHUD is currently set to '%s'",
-    "minihud.message.seed_set": "MiniHUD: Set the world seed to '%s'",
-    "minihud.message.spawn_set": "MiniHUD: Set the world spawn to %s",
-    "minihud.message.no_spawn_chunk_radius": "MiniHUD: Spawn Chunk Radius is not known (Default 2)",
-    "minihud.message.spawn_chunk_radius_is": "The spawn chunk radius in MiniHUD is currently set to '%s'",
-    "minihud.message.spawn_chunk_radius_set": "MiniHUD: Set the Spawn Chunk Radius to %s",
+    "minihud.message.no_seed": "PurityHUD: World seed is not known",
+    "minihud.message.seed_is": "The world seed in PurityHUD is currently set to '%s'",
+    "minihud.message.seed_set": "PurityHUD: Set the world seed to '%s'",
+    "minihud.message.spawn_set": "PurityHUD: Set the world spawn to %s",
+    "minihud.message.no_spawn_chunk_radius": "PurityHUD: Spawn Chunk Radius is not known (Default 2)",
+    "minihud.message.spawn_chunk_radius_is": "The spawn chunk radius in PurityHUD is currently set to '%s'",
+    "minihud.message.spawn_chunk_radius_set": "PurityHUD: Set the Spawn Chunk Radius to %s",
 
     "minihud.info_line.invalid_value": "Invalid",
     "minihud.info_line.remaining": "remaining",
