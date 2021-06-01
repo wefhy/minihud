@@ -766,24 +766,6 @@ public class RenderHandler implements IRenderer
 
             this.addLine("Slime chunk: " + result);
         }
-        else if (type == InfoToggle.LOOKING_AT_ENTITY)
-        {
-            if (mc.crosshairTarget != null && mc.crosshairTarget.getType() == HitResult.Type.ENTITY)
-            {
-                Entity lookedEntity = ((EntityHitResult) mc.crosshairTarget).getEntity();
-
-                if (lookedEntity instanceof LivingEntity)
-                {
-                    LivingEntity living = (LivingEntity) lookedEntity;
-                    this.addLine(String.format("Entity: %s - HP: %.1f / %.1f",
-                            living.getName().getString(), living.getHealth(), living.getMaxHealth()));
-                }
-                else
-                {
-                    this.addLine(String.format("Entity: %s", lookedEntity.getName().getString()));
-                }
-            }
-        }
         else if (type == InfoToggle.ENTITY_REG_NAME)
         {
             if (mc.crosshairTarget != null && mc.crosshairTarget.getType() == HitResult.Type.ENTITY)
