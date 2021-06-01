@@ -48,7 +48,7 @@
     "minihud.gui.label.shape.line.end": "§7Pos 2: x: §9%s§7, y: §9%s§7, z: §9%s",
     "minihud.gui.label.shape.render_type_colon": "Render Type:",
 
-    "minihud.gui.title.configs": "MiniHUD Configs",
+    "minihud.gui.title.configs": "PurityHUD Configs",
     "minihud.gui.title.shape_editor": "Shape Editor (%s)",
     "minihud.gui.title.shape_manager": "Shape Manager",
 
@@ -113,8 +113,8 @@
     "minihud.message.error.shapes.select_shape_from_dropdown": "Select the Shape type to create from the dropdown widget",
 
     "minihud.message.distance_reference_point_set": "Set distance reference point to %s",
-    "minihud.message.no_seed": "MiniHUD: World seed is not known",
-    "minihud.message.seed_is": "The world seed in MiniHUD is currently set to '%s'",
-    "minihud.message.seed_set": "MiniHUD: Set the world seed to '%s'",
-    "minihud.message.spawn_set": "MiniHUD: Set the world spawn to %s"
+    "minihud.message.no_seed": "PurityHUD: World seed is not known",
+    "minihud.message.seed_is": "The world seed in PurityHUD is currently set to '%s'",
+    "minihud.message.seed_set": "PurityHUD: Set the world seed to '%s'",
+    "minihud.message.spawn_set": "PurityHUD: Set the world spawn to %s"
 }
