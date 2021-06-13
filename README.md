@@ -2,6 +2,8 @@ Purity HUD
 ==============
 Purity HUD is a modified version od Mini HUD that disables some of it's features in order to make it fair-play. 
 
+DOWNLOAD HERE: https://github.com/wefhy/purityhud/releases/tag/purityhub
+
 See original project at: https://github.com/maruohon/minihud
 
 Mini HUD is a tiny client-side mod for Minecraft. that adds the coordinates, looking angle and current speed to the screen.
