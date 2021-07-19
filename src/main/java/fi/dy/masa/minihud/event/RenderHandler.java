@@ -628,10 +628,6 @@ public class RenderHandler implements IRenderer
         {
             this.addLine(mc.worldRenderer.getChunksDebugString());
         }
-        else if (type == InfoToggle.CHUNK_UPDATES)
-        {
-            this.addLine("TODO" /*String.format("Chunk updates: %d", ChunkRenderer.chunkUpdateCount)*/);
-        }
         else if (type == InfoToggle.LOADED_CHUNKS_COUNT)
         {
             String chunksClient = mc.world.asString();

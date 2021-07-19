@@ -23,7 +23,6 @@ public enum InfoToggle implements IConfigInteger, IHotkeyTogglable
     CHUNK_POS               ("infoChunkPosition",           false,  7, "", "Show the Chunk the player is currently within"),
     CHUNK_SECTIONS          ("infoChunkSections",           false, 14, "", "Show the currently rendered number of\nChunk sections (the C value from F3)"),
     CHUNK_SECTIONS_FULL     ("infoChunkSectionsLine",       false, 15, "", "Show the entire line of the C value from the F3 screen"),
-    CHUNK_UPDATES           ("infoChunkUpdates",            false, 16, "", "Show the current number of chunk updates per second"),
     COORDINATES             ("infoCoordinates",             true,   4, "", "Show the player's coordinates"),
     DIFFICULTY              ("infoDifficulty",              false, 18, "", "Show the local difficulty"),
     DIMENSION               ("infoDimensionId",             false,  5, "", "Show the current dimension ID\n(might not be accurate in every case,\ndepending on the server (Sponge?)!)"),
