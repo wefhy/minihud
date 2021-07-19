@@ -37,7 +37,7 @@ import fi.dy.masa.minihud.util.LightLevelNumberMode;
 
 public class OverlayRendererLightLevel extends OverlayRendererBase
 {
-    private static final Identifier TEXTURE_NUMBERS = new Identifier(Reference.MOD_ID, "textures/misc/light_level_numbers.png");
+    private static final Identifier TEXTURE_NUMBERS = new Identifier("minihud", "textures/misc/light_level_numbers.png");
 
     private final List<LightLevelInfo> lightInfos = new ArrayList<>();
     private final BlockPos.Mutable mutablePos = new BlockPos.Mutable();
