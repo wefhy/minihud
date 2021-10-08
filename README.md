@@ -10,9 +10,13 @@ For more information and the downloads (compiled builds), see http://minecraft.c
 
 Installation
 =========
+
 Download JAR file from here: https://github.com/wefhy/purityhud/releases/tag/purityhub
+
 You'll also need [malilib](https://www.curseforge.com/minecraft/mc-mods/malilib)
+
 Put purityhud and malilib jar files into `mods` folder
+
 Make sure you have Fabric installed (Fabric API is not necessary tho).
 
 Compiling
