@@ -77,7 +77,8 @@ public enum StructureType
 
     public boolean existsInDimension(DimensionType dimId)
     {
-        return this.dims.contains(dimId.getSkyProperties()); // a bit of a meh... but works in vanilla
+        // don't know if this is even close to correct but I think it works
+        return this.dims.contains(dimId); // a bit of a meh... but works in vanilla
     }
 
     public String getStructureName()
