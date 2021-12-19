@@ -34,7 +34,7 @@
 	],
 
 	"depends": {
-		"minecraft": "1.18",
+		"minecraft": "1.18.1",
 		"malilib": ">=0.10.0-dev.26"
 	}
 }
