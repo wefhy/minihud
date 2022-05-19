@@ -63,3 +63,8 @@ tasks.withType(AbstractArchiveTask).configureEach {
 	preserveFileTimestamps = true
 	//reproducibleFileOrder = true
 }
+
+tasks.withType(AbstractArchiveTask) {
+	preserveFileTimestamps = false
+	reproducibleFileOrder = true
+}
