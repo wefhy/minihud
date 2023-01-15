@@ -15,6 +15,8 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.ServerTask;
 import net.minecraft.server.world.ServerWorld;
@@ -30,8 +32,6 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkStatus;
@@ -44,6 +44,7 @@ import fi.dy.masa.malilib.util.PositionUtils;
 import fi.dy.masa.minihud.MiniHUD;
 import fi.dy.masa.minihud.config.Configs;
 import fi.dy.masa.minihud.config.RendererToggle;
+import fi.dy.masa.minihud.data.MobCapDataHandler;
 import fi.dy.masa.minihud.network.StructurePacketHandlerCarpet;
 import fi.dy.masa.minihud.network.StructurePacketHandlerServux;
 import fi.dy.masa.minihud.renderer.OverlayRendererBeaconRange;
@@ -66,6 +67,7 @@ public class DataStorage
     public static final int CARPET_ID_LARGE_BOUNDINGBOX_MARKERS_START = 7;
     public static final int CARPET_ID_LARGE_BOUNDINGBOX_MARKERS = 8;
 
+    private final MobCapDataHandler mobCapData = new MobCapDataHandler();
     private boolean worldSeedValid;
     private boolean serverTPSValid;
     private boolean hasSyncedTime;
@@ -105,6 +107,11 @@ public class DataStorage
         return INSTANCE;
     }
 
+    public MobCapDataHandler getMobCapData()
+    {
+        return this.mobCapData;
+    }
+
     public void reset(boolean isLogout)
     {
         if (isLogout)
@@ -129,6 +136,7 @@ public class DataStorage
             MiniHUD.printDebug("DataStorage#reset() - dimension change or log-in");
         }
 
+        this.mobCapData.clear();
         this.serverTPSValid = false;
         this.hasSyncedTime = false;
         this.carpetServer = false;
@@ -690,7 +698,7 @@ public class DataStorage
                 {
                     Structure structure = entry.getKey();
                     StructureStart start = entry.getValue();
-                    Identifier id = world.getRegistryManager().get(Registry.STRUCTURE_KEY).getId(structure);
+                    Identifier id = world.getRegistryManager().get(RegistryKeys.STRUCTURE).getId(structure);
                     StructureType type = StructureType.fromStructureId(id != null ? id.toString() : "?");
 
                     if (type.isEnabled() &&

@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
+import org.joml.Matrix4f;
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
@@ -25,6 +26,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AbstractHorseEntity;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.integrated.IntegratedServer;
 import net.minecraft.server.world.ServerChunkManager;
 import net.minecraft.server.world.ServerWorld;
@@ -36,9 +39,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.LightType;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.World;
@@ -56,6 +57,7 @@ import fi.dy.masa.malilib.util.WorldUtils;
 import fi.dy.masa.minihud.config.Configs;
 import fi.dy.masa.minihud.config.InfoToggle;
 import fi.dy.masa.minihud.config.RendererToggle;
+import fi.dy.masa.minihud.data.MobCapDataHandler;
 import fi.dy.masa.minihud.mixin.IMixinServerWorld;
 import fi.dy.masa.minihud.mixin.IMixinWorldRenderer;
 import fi.dy.masa.minihud.renderer.OverlayRenderer;
@@ -418,6 +420,20 @@ public class RenderHandler implements IRenderer
             else
             {
                 this.addLine("Server TPS: <no valid data>");
+            }
+        }
+        else if (type == InfoToggle.MOB_CAPS)
+        {
+            MobCapDataHandler mobCapData = this.data.getMobCapData();
+
+            if (mc.isIntegratedServerRunning() && (mc.getServer().getTicks() % 100) == 0)
+            {
+                mobCapData.updateIntegratedServerMobCaps();
+            }
+
+            if (mobCapData.getHasValidData())
+            {
+                this.addLine(mobCapData.getFormattedInfoLine());
             }
         }
         else if (type == InfoToggle.PING)
@@ -789,7 +805,7 @@ public class RenderHandler implements IRenderer
             if (clientChunk.isEmpty() == false)
             {
                 Biome biome = mc.world.getBiome(pos).value();
-                Identifier id = mc.world.getRegistryManager().get(Registry.BIOME_KEY).getId(biome);
+                Identifier id = mc.world.getRegistryManager().get(RegistryKeys.BIOME).getId(biome);
                 this.addLine("Biome: " + StringUtils.translate("biome." + id.toString().replace(":", ".")));
             }
         }
@@ -800,7 +816,7 @@ public class RenderHandler implements IRenderer
             if (clientChunk.isEmpty() == false)
             {
                 Biome biome = mc.world.getBiome(pos).value();
-                Identifier rl = mc.world.getRegistryManager().get(Registry.BIOME_KEY).getId(biome);
+                Identifier rl = mc.world.getRegistryManager().get(RegistryKeys.BIOME).getId(biome);
                 String name = rl != null ? rl.toString() : "?";
                 this.addLine("Biome reg name: " + name);
             }
@@ -959,7 +975,7 @@ public class RenderHandler implements IRenderer
         {
             BlockPos posLooking = ((BlockHitResult) mc.crosshairTarget).getBlockPos();
             BlockState state = mc.world.getBlockState(posLooking);
-            Identifier rl = Registry.BLOCK.getId(state.getBlock());
+            Identifier rl = Registries.BLOCK.getId(state.getBlock());
 
             this.addLine(rl != null ? rl.toString() : "<null>");
 
