@@ -66,7 +66,7 @@ public class Configs implements IConfigHandler
         public static final ConfigBoolean       LIGHT_LEVEL_NUMBER_ROTATION         = new ConfigBoolean("lightLevelNumberRotation", true, "minihud.config.generic.comment.lightLevelNumberRotation").translatedName("minihud.config.generic.name.lightLevelNumberRotation");
         public static final ConfigInteger       LIGHT_LEVEL_RANGE                   = new ConfigInteger("lightLevelRange", 24, 1, 64, "minihud.config.generic.comment.lightLevelRange").translatedName("minihud.config.generic.name.lightLevelRange");
         public static final ConfigDouble        LIGHT_LEVEL_RENDER_OFFSET           = new ConfigDouble("lightLevelRenderOffset", 0.005, 0.0, 1.0, "minihud.config.generic.comment.lightLevelRenderOffset").translatedName("minihud.config.generic.name.lightLevelRenderOffset");
-        public static final ConfigBoolean       LIGHT_LEVEL_RENDER_THROUGH          = new ConfigBoolean("lightLevelRenderThrough", false, "minihud.config.generic.comment.lightLevelRenderThrough").translatedName("minihud.config.generic.name.lightLevelRenderThrough");
+//        public static final ConfigBoolean       LIGHT_LEVEL_RENDER_THROUGH          = new ConfigBoolean("lightLevelRenderThrough", false, "minihud.config.generic.comment.lightLevelRenderThrough").translatedName("minihud.config.generic.name.lightLevelRenderThrough");
         public static final ConfigBoolean       LIGHT_LEVEL_SKIP_BLOCK_CHECK        = new ConfigBoolean("lightLevelSkipBlockCheck", false, "minihud.config.generic.comment.lightLevelSkipBlockCheck").translatedName("minihud.config.generic.name.lightLevelSkipBlockCheck");
         public static final ConfigInteger       LIGHT_LEVEL_THRESHOLD_DIM           = new ConfigInteger("lightLevelThresholdDim", 0, 0, 15, "minihud.config.generic.comment.lightLevelThresholdDim").translatedName("minihud.config.generic.name.lightLevelThresholdDim");
         public static final ConfigInteger       LIGHT_LEVEL_THRESHOLD_SAFE          = new ConfigInteger("lightLevelThresholdSafe", 1, 0, 15, "minihud.config.generic.comment.lightLevelThresholdSafe").translatedName("minihud.config.generic.name.lightLevelThresholdSafe");
@@ -124,7 +124,7 @@ public class Configs implements IConfigHandler
                 LIGHT_LEVEL_COLLISION_CHECK,
                 LIGHT_LEVEL_COLORED_NUMBERS,
                 LIGHT_LEVEL_NUMBER_ROTATION,
-                LIGHT_LEVEL_RENDER_THROUGH,
+//                LIGHT_LEVEL_RENDER_THROUGH,
                 LIGHT_LEVEL_SKIP_BLOCK_CHECK,
                 LIGHT_LEVEL_UNDER_WATER,
                 MAP_PREVIEW,
@@ -327,7 +327,7 @@ public class Configs implements IConfigHandler
                 }
             }
 
-            OverlayRendererLightLevel.INSTANCE.setRenderThrough(Configs.Generic.LIGHT_LEVEL_RENDER_THROUGH.getBooleanValue());
+            OverlayRendererLightLevel.INSTANCE.setRenderThrough(false);
             OverlayRendererStructures.INSTANCE.setRenderThrough(Configs.Generic.STRUCTURES_RENDER_THROUGH.getBooleanValue());
         }
     }
